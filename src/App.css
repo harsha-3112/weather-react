@@ -1,38 +1,164 @@
-.App {
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BACKGROUND */
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea,  #f6f3f0, #fd5e53);
+  background-size: 300% 300%;
+  animation: gradientMove 10s ease infinite;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+}
+
+/* BACKGROUND ANIMATION */  
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* MAIN CONTAINER */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* HEADER */
+h2 {
+  font-size: 2.6rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* SEARCH BAR */
+input {
+  padding: 14px 18px;
+  width: 260px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+button {
+  padding: 14px 26px;
+  margin-left: 10px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.45);
+}
+
+/* MAIN WEATHER CARD */
+.card {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  border-radius: 26px;
+  padding: 30px;
+  width: 360px;
+  margin: 35px auto;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin: 8px 0;
+  font-size: 15px;
+}
+
+/* SECTION HEADERS */
+h3 {
+  margin: 40px 0 20px;
+  font-size: 1.7rem;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* GRID */
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 22px;
+}
+
+/* MINI CARDS */
+.mini-card {
+  border-radius: 22px;
+  padding: 18px 12px;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, #f7971e, #ffd200);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s ease;
+}
+
+.mini-card:nth-child(2n) {
+  background: linear-gradient(135deg, #fc466b, #3f5efb);
+}
+
+.mini-card:nth-child(3n) {
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+}
+
+.mini-card:hover {
+  transform: translateY(-10px) scale(1.07);
+}
+
+/* ICON */
+.mini-card img {
+  width: 55px;
+  height: 55px;
+}
+
+/* TEXT */
+.mini-card p {
+  font-size: 14px;
+  margin: 6px 0;
+  font-weight: 500;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 2rem;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  input {
+    width: 200px;
+    margin-bottom: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  button {
+    margin-left: 0;
+  }
+
+  .card {
+    width: 100%;
   }
 }
