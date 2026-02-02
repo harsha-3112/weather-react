@@ -10,8 +10,7 @@ const Weather = () => {
   const [aqi, setAqi] = useState(null);
 
   useEffect(() => {
-    fetchWeather();
-  }, []);
+    fetchWeather();}, );
 
   const fetchWeather = async () => {
     const currentRes = await fetch(
